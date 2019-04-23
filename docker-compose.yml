@@ -2,8 +2,8 @@ version: '2'
 services:
   backend:
 
-    build: .
-#    image: duongk22899/home-stay:v1
+#    build: .
+    image: duongk22899/home-stay:v2
     command: bash -c "./wait-for-it.sh db:5432 &&sequelize db:migrate && npm start"
     volumes:
       - ./:/usr/src/app/

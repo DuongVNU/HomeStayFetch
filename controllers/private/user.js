@@ -8,6 +8,7 @@ const db = require('./../../models');
 module.exports.registerRoute = (router) => {
     return router
     // .get('/', middleware.checkToken, index)
+        .post('/', index)
         .post('/login', loginUser)
         .post('/register', registerUser)
 };
@@ -21,7 +22,7 @@ let loginUser = (req, respon, next) => {
     let mockedPassword = 'password';
     db.user.findOne({
         where: {
-            email: email,
+            email: email
         }
     })
         .then((user) => {

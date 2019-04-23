@@ -1,0 +1,26 @@
+version: '2'
+services:
+  backend:
+
+#    build: .
+    image: duongk22899/home-stay:v1
+    command: bash -c "sequelize db:migrate && npm start"
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - "3002:3001"
+    depends_on:
+      - db
+#    environment:
+#      DATABASE_URL: postgres://username:pgpassword@db:5432/homestay
+#      WAIT_HOSTS: db:5432
+    links:
+      - db
+  db:
+    image: postgres
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_DB: homestay
+      POSTGRES_PASSWORD: pgpassword

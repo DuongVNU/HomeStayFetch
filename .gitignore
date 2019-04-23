@@ -42,5 +42,3 @@ config/*.json
 
 #docker
 .env
-docker-compose.yml
-Dockerfile

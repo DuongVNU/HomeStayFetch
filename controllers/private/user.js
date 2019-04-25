@@ -16,7 +16,7 @@ module.exports.registerRoute = (router) => {
 let loginUser = (req, respon, next) => {
     let password = req.body.password;
     let email = req.body.email;
-    console.log("abaababababa")
+    console.log("abaababababa");
     // For the given username fetch user from DB
     let mockedUsername = 'admin';
     let mockedPassword = 'password';

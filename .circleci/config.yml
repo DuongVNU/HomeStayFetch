@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build -f . -t $DOCKER_REGISTRY/home-stay:$CIRCLE_SHA1 .
+            docker build -t $DOCKER_REGISTRY/home-stay:$CIRCLE_SHA1 .
       - run:
           name: Push Docker Image to DockerHub
           command: |
